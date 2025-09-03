@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_product'])) {
     }
    
     // Check file size (max 2MB)
-    if ($_FILES["image"]["size"] > 3000000) {
+    if ($_FILES["image"]["size"] > 2000000) {
         $uploadOk = 0;
     }
    

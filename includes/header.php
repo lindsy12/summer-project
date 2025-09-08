@@ -21,11 +21,13 @@ $current_page = basename($_SERVER['PHP_SELF']);
         --color-light-bg: #f8f9fa;
     }
 
+
     body {
         padding-top: 80px;
         background-color: var(--color-light-bg);
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
 
     .header {
         background: var(--color-white);
@@ -36,9 +38,11 @@ $current_page = basename($_SERVER['PHP_SELF']);
         z-index: 1000;
     }
 
+
     .navbar {
         padding: 0.5rem 2rem;
     }
+
 
     .nav-container {
         max-width: 1200px;
@@ -48,6 +52,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
         align-items: center;
         position: relative;
     }
+
 
     .nav-logo a {
         font-size: 1.2rem;
@@ -59,6 +64,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
         gap: 10px;
     }
 
+
     /* Desktop Menu */
     .nav-menu {
         display: flex;
@@ -69,9 +75,11 @@ $current_page = basename($_SERVER['PHP_SELF']);
         gap: 1.5rem;
     }
 
+
     .nav-item {
         position: relative;
     }
+
 
     .nav-link {
         color: var(--color-text);
@@ -83,14 +91,17 @@ $current_page = basename($_SERVER['PHP_SELF']);
         position: relative;
     }
 
+
     .nav-link:hover {
         color: var(--color-primary);
     }
+
 
     .nav-link.active {
         color: var(--color-primary);
         font-weight: 600;
     }
+
 
     .nav-link.active::after {
         content: '';
@@ -103,6 +114,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
         border-radius: 2px;
     }
 
+
     .register-btn {
         background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
         color: var(--color-white) !important;
@@ -111,10 +123,12 @@ $current_page = basename($_SERVER['PHP_SELF']);
         transition: all 0.3s ease;
     }
 
+
     .register-btn:hover {
         transform: translateY(-2px);
         box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
     }
+
 
     /* Hamburger Menu */
     .hamburger {
@@ -128,6 +142,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
         justify-content: space-between;
     }
 
+
     .hamburger span {
         display: block;
         width: 100%;
@@ -138,17 +153,21 @@ $current_page = basename($_SERVER['PHP_SELF']);
         transform-origin: center;
     }
 
+
     .hamburger.active span:nth-child(1) {
         transform: rotate(45deg) translate(6px, 6px);
     }
+
 
     .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
 
+
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(6px, -6px);
     }
+
 
     /* Mobile Menu */
     @media (max-width: 992px) {
@@ -156,14 +175,16 @@ $current_page = basename($_SERVER['PHP_SELF']);
             padding-top: 70px;
         }
 
+
         .navbar {
             padding: 0.5rem 1rem;
         }
 
+
         .hamburger {
             display: flex;
         }
-        
+       
         .nav-menu {
             position: fixed;
             top: 70px;
@@ -180,27 +201,29 @@ $current_page = basename($_SERVER['PHP_SELF']);
             z-index: 999;
             gap: 0;
         }
-        
+       
         .nav-menu.active {
             left: 0;
         }
-        
+       
         .nav-item {
             margin: 1rem 0;
             width: 100%;
             text-align: center;
         }
-        
+       
         .nav-link {
             padding: 1rem 2rem;
             font-size: 1.1rem;
             width: 100%;
         }
 
+
         .nav-link.active::after {
             width: 80%;
             left: 10%;
         }
+
 
         .register-btn {
             margin: 1rem auto;
@@ -209,26 +232,28 @@ $current_page = basename($_SERVER['PHP_SELF']);
         }
     }
 
+
     /* Responsive adjustments */
     @media (max-width: 768px) {
         .nav-logo a span {
             font-size: 1.1rem;
         }
-        
+       
         .nav-logo img {
             height: 45px !important;
         }
     }
 
+
     @media (max-width: 480px) {
         .navbar {
             padding: 0.5rem;
         }
-        
+       
         .nav-logo a span {
             font-size: 1rem;
         }
-        
+       
         .nav-logo img {
             height: 40px !important;
         }
@@ -241,12 +266,12 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <div class="nav-container">
                 <div class="nav-logo">
                     <a href="../index.php" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                        <img src="../assets/logo2.png" 
+                        <img src="../assets/logo2.png"
                              alt="SkinCare"
-                             style="height: 50px; margin-right: 10px;" 
+                             style="height: 50px; margin-right: 10px;"
                     </a>
                 </div>
-                
+               
                 <ul class="nav-menu" id="navMenu">
                     <li class="nav-item">
                         <a href="../index.php" class="nav-link <?php echo ($current_page == 'index.php') ? 'active' : ''; ?>">Home</a>
@@ -267,7 +292,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         <a href="../authentication/register.php" class="nav-link register-btn <?php echo ($current_page == 'register.php') ? 'active' : ''; ?>">Register</a>
                     </li>
                 </ul>
-                
+               
                 <div class="hamburger" id="hamburger">
                     <span></span>
                     <span></span>
@@ -277,21 +302,22 @@ $current_page = basename($_SERVER['PHP_SELF']);
         </nav>
     </header>
 
+
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
         const navLinks = document.querySelectorAll('.nav-link');
-        
+       
         // Toggle mobile menu
         hamburger.addEventListener('click', function() {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
-            
+           
             // Prevent body scroll when menu is open
             document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
         });
-        
+       
         // Close menu when clicking a link
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
@@ -302,11 +328,11 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 }
             });
         });
-        
+       
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
-            if (window.innerWidth <= 992 && 
-                !navMenu.contains(e.target) && 
+            if (window.innerWidth <= 992 &&
+                !navMenu.contains(e.target) &&
                 !hamburger.contains(e.target) &&
                 navMenu.classList.contains('active')) {
                 hamburger.classList.remove('active');
@@ -314,7 +340,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 document.body.style.overflow = '';
             }
         });
-        
+       
         // Update on window resize
         window.addEventListener('resize', function() {
             if (window.innerWidth > 992) {
@@ -323,7 +349,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 document.body.style.overflow = '';
             }
         });
-        
+       
         // Add smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -339,5 +365,4 @@ $current_page = basename($_SERVER['PHP_SELF']);
         });
     });
     </script>
-cd summer-project
-cd summer-project
+

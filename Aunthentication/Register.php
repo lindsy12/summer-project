@@ -428,10 +428,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="form-group">
                             <label for="role">Account Type</label>
                             <select id="role" name="role" class="form-control" required>
-                                <option value="">Select your role</option>
+                            <option value="">Select your role</option>
                                 <option value="client" <?php echo (isset($_POST['role']) && $_POST['role'] === 'client') ? 'selected' : ''; ?>>Client/Customer</option>
                                 <option value="dermatologist" <?php echo (isset($_POST['role']) && $_POST['role'] === 'dermatologist') ? 'selected' : ''; ?>>Dermatologist</option>
                                 <option value="cosmetic" <?php echo (isset($_POST['role']) && $_POST['role'] === 'cosmetic') ? 'selected' : ''; ?>>Cosmetic Agent</option>
+                                <option value="admin" <?php echo (isset($_POST['role']) && $_POST['role'] === 'admin') ? 'selected' : ''; ?>>Admin</option>
+
+
                             </select>
                         </div>
                        
@@ -453,3 +456,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php include '../includes/footer.php'; ?>
 </body>
 </html>
+

@@ -10,7 +10,7 @@ if (!isset($_SESSION['id']) || $_SESSION['role'] != 'admin') {
 $host = 'localhost';
 $dbname = 'skincare_db';
 $username = 'root'; // Change if needed
-$password = ''; // Change if needed
+$password = ''; // Change if needed 
 
 
 try {

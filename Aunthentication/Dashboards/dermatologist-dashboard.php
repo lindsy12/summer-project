@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_profile'])) {
     $availability = $_POST['availability'];
     $quote = $_POST['quote'];
    
+    
     // Handle image upload
     $profile_image = null;
     if (isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] == UPLOAD_ERR_OK) {
@@ -36,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_profile'])) {
         }
     }
    
+    
     // Check if profile already exists
     $check_sql = "SELECT id, profile_image FROM dermatologist_profiles WHERE dermatologist_id = ?";
     $check_stmt = $conn->prepare($check_sql);
@@ -47,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_profile'])) {
         $existing_profile = $check_result->fetch_assoc();
         $current_image = $existing_profile['profile_image'];
        
+        
         // Update existing profile
         if ($profile_image) {
             // Delete old image if it exists
@@ -74,6 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_profile'])) {
         $error = "Error updating profile: " . $conn->error;
     }
 }
+
 
 
 // Handle product review submission

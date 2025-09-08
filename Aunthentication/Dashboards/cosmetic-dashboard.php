@@ -197,7 +197,7 @@ $result = $conn->query($sql);
         }
        
         .sidebar-menu i {
-            font-size: 18px;
+            font-size: 19px;
         }
        
         /* Main Content Styles */

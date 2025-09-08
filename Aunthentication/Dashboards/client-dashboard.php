@@ -12,7 +12,7 @@ if (!isset($_SESSION['id']) || $_SESSION['role'] != 'admin') {
 </head>
 <body>
 <h2>Welcome, <?php echo $_SESSION['name']; ?> (Client)</h2>
-<p>This is your client dashboard.</p>
+<p>This is your Client Dashboard.</p>
 <a href="../logout.php">Logout</a>
 </body>
 </html>

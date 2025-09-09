@@ -653,14 +653,14 @@
                
                 <div class="footer-column">
                     <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Beauty Street, Skincare City</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> jonasi-messasi Yaounde</p>
+                    <p><i class="fas fa-phone"></i> +237 680065719</p>
                     <p><i class="fas fa-envelope"></i> info@glowskin.com</p>
                 </div>
             </div>
            
             <div class="footer-bottom">
-                <p>&copy; 2023 GlowSkin. All rights reserved.</p>
+                <p>&copy; 2025 GlowSkin. All rights reserved.</p>
             </div>
         </div>
     </footer>

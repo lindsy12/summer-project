@@ -25,7 +25,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     body {
         padding-top: 80px;
         background-color: var(--color-light-bg);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     }
 
 

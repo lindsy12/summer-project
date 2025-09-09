@@ -343,7 +343,7 @@ require_once('../authentication/config.php');
 
     <div class="container">
         <div class="page-header">
-            <h1>Our Expert Dermatologists</h1>
+            <h1>Expert Dermatologists</h1>
             <p>Meet our team of skilled dermatologists dedicated to providing the best skincare treatments and advice. Each specialist brings unique expertise and experience to help you achieve healthy, glowing skin.</p>
         </div>
        

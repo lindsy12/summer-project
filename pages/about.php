@@ -1,531 +1,447 @@
-<?php
-session_start();
-if (!isset($_SESSION['id']) || $_SESSION['role'] != 'admin') {
-    header("Location: ../login.php");
-    exit;
-}
-
-
-// Database connection
-$host = 'localhost';
-$dbname = 'skincare_db';
-$username = 'root'; // Change if needed
-$password = ''; // Change if needed
-
-
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-   
-    // Fetch all users
-    $stmt = $pdo->query("SELECT * FROM users ORDER BY created_at DESC");
-    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-   
-    // Count users by role
-    $roleCountStmt = $pdo->query("SELECT role, COUNT(*) as count FROM users GROUP BY role");
-    $roleCounts = $roleCountStmt->fetchAll(PDO::FETCH_ASSOC);
-   
-    // Total user count
-    $totalUsers = count($users);
-   
-} catch(PDOException $e) {
-    die("Database connection failed: " . $e->getMessage());
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - Skin Glow</title>
+    <title>About Us - SkinGlow</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
-       
+
+
         :root {
-            --primary: #8A2BE2;
-            --secondary: #FF7F50;
-            --light: #f8f9fa;
-            --dark: #343a40;
-            --success: #28a745;
-            --info: #17a2b8;
-            --warning: #ffc107;
-            --danger: #dc3545;
+            --blue: #7e57c2;
+            --light-blue: #6bb9f0;
+            --orange: #ff8a65;
+            --light-orange: #ffc77f;
+            --dark: #2c3e50;
+            --light: #f9f9f9;
         }
-       
+
+
         body {
-            background-color: #f5f7fb;
-            color: #333;
+            background-color: var(--light);
+            color: var(--dark);
             line-height: 1.6;
+            padding: 0;
+            margin: 0;
         }
-       
-        .dashboard {
-            display: flex;
-            min-height: 100vh;
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            margin-top: 70px;
         }
-       
-        /* Sidebar */
-        .sidebar {
-            width: 250px;
-            background: linear-gradient(to bottom, var(--primary), #6a11cb);
-            color: white;
-            padding: 20px 0;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-       
-        .brand {
-            padding: 0 20px 20px;
+
+
+        /* Hero Section */
+        .hero {
             text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 20px;
+            padding: 4rem 1rem;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f8f9fa"/><circle cx="30" cy="30" r="5" fill="%23ff9a3c" opacity="0.3"/><circle cx="70" cy="70" r="8" fill="%233498db" opacity="0.3"/><circle cx="50" cy="20" r="6" fill="%23ff9a3c" opacity="0.2"/></svg>');
+            background-size: cover;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-       
-        .brand h2 {
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-       
-        .brand span {
-            color: var(--secondary);
-        }
-       
-        .sidebar-menu {
-            list-style: none;
-        }
-       
-        .sidebar-menu li {
-            margin-bottom: 5px;
-        }
-       
-        .sidebar-menu a {
-            display: flex;
-            align-items: center;
-            padding: 12px 20px;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-       
-        .sidebar-menu a:hover, .sidebar-menu a.active {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-left: 4px solid var(--secondary);
-        }
-       
-        .sidebar-menu i {
-            margin-right: 10px;
-            font-size: 1.1rem;
-        }
-       
-        /* Main Content */
-        .main-content {
-            flex: 1;
-            padding: 20px;
-        }
-       
-        /* Header */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            background: white;
-            padding: 15px 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-       
-        .welcome h1 {
-            font-size: 1.8rem;
+
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
             color: var(--dark);
         }
-       
-        .welcome p {
-            color: #6c757d;
+
+
+        .hero h1 span {
+            color: var(--orange);
         }
-       
-        .admin-info {
+
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #555;
+        }
+
+
+        /* Section Styles */
+        .section {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
-        }
-       
-        .admin-info .logout {
-            background: var(--secondary);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-        }
-       
-        .admin-info .logout:hover {
-            background: #e67345;
-        }
-       
-        .admin-info .logout i {
-            margin-right: 5px;
-        }
-       
-        /* Stats Cards */
-        .stats-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-       
-        .card {
+            margin-bottom: 4rem;
             background: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-       
-        .stat-card {
-            display: flex;
-            align-items: center;
-        }
-       
-        .stat-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin-right: 15px;
-        }
-       
-        .stat-icon.users {
-            background: rgba(52, 152, 219, 0.2);
-            color: #3498db;
-        }
-       
-        .stat-icon.admin {
-            background: rgba(231, 76, 60, 0.2);
-            color: #e74c3c;
-        }
-       
-        .stat-icon.client {
-            background: rgba(46, 204, 113, 0.2);
-            color: #2ecc71;
-        }
-       
-        .stat-icon.dermatologist {
-            background: rgba(155, 89, 182, 0.2);
-            color: #9b59b6;
-        }
-       
-        .stat-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-        }
-       
-        .stat-info p {
-            color: #6c757d;
-            font-size: 0.9rem;
-        }
-       
-        /* Users Table */
-        .users-table {
-            background: white;
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-       
-        .table-header {
-            padding: 20px;
-            border-bottom: 1px solid #eee;
+
+
+        .section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+
+        .section-content {
+            flex: 1;
+            padding: 3rem;
+            min-width: 300px;
+        }
+
+
+        .section-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background-color: var(--light-blue);
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
         }
-       
-        .table-header h2 {
-            font-size: 1.4rem;
-            color: var(--dark);
+
+
+        .section:nth-child(odd) .section-image {
+            background: linear-gradient(45deg, var(--blue), var(--light-blue));
         }
-       
-        table {
-            width: 100%;
-            border-collapse: collapse;
+
+
+        .section:nth-child(even) .section-image {
+            background: linear-gradient(45deg, var(--orange), var(--light-orange));
         }
-       
-        th, td {
-            padding: 15px 20px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
+
+
+        .section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--blue);
         }
-       
-        th {
-            background-color: #f8f9fa;
-            font-weight: 600;
-            color: #495057;
+
+
+        .section h2 span {
+            color: var(--orange);
         }
-       
-        tr:hover {
-            background-color: #f8f9fa;
+
+
+        .section p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #555;
         }
-       
-        .role-badge {
+
+
+        .btn {
             display: inline-block;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-       
-        .role-admin {
-            background: rgba(231, 76, 60, 0.1);
-            color: #e74c3c;
-        }
-       
-        .role-client {
-            background: rgba(46, 204, 113, 0.1);
-            color: #2ecc71;
-        }
-       
-        .role-dermatologist {
-            background: rgba(155, 89, 182, 0.1);
-            color: #9b59b6;
-        }
-       
-        .role-cosmetic {
-            background: rgba(241, 196, 15, 0.1);
-            color: #f1c40f;
-        }
-       
-        .action-btn {
-            padding: 6px 12px;
-            border-radius: 4px;
+            background: var(--blue);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            font-size: 0.85rem;
-            margin-right: 5px;
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
         }
-       
-        .view-btn {
-            background: #3498db;
+
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(52, 152, 219, 0.4);
+            background: #2980b9;
+        }
+
+
+        /* Values Section */
+        .values {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            margin-bottom: 3rem;
+        }
+
+
+        .values h2 {
+            color: var(--blue);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+
+        .values h2 span {
+            color: var(--orange);
+        }
+
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+
+        .value-item {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+
+        .value-item:hover {
+            transform: translateY(-10px);
+        }
+
+
+        .value-item i {
+            font-size: 3rem;
+            color: var(--blue);
+            margin-bottom: 1.5rem;
+        }
+
+
+        .value-item h3 {
+            color: var(--orange);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+
+        /* Team Section */
+        .team {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+
+        .team h2 {
+            color: var(--blue);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+
+        .team h2 span {
+            color: var(--orange);
+        }
+
+
+        .team p {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+
+        .member-image {
+            height: 250px;
+            background: linear-gradient(45deg, var(--blue), var(--light-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
+            font-size: 4rem;
         }
-       
-        .edit-btn {
-            background: #f1c40f;
-            color: white;
+
+
+        .member-info {
+            padding: 1.5rem;
         }
-       
-        .delete-btn {
-            background: #e74c3c;
-            color: white;
+
+
+        .member-info h3 {
+            color: var(--blue);
+            margin-bottom: 0.5rem;
         }
-       
-        /* Responsive */
-        @media (max-width: 992px) {
-            .dashboard {
-                flex-direction: column;
-            }
-           
-            .sidebar {
-                width: 100%;
-                padding: 10px 0;
-            }
-           
-            .sidebar-menu {
-                display: flex;
-                overflow-x: auto;
-            }
-           
-            .sidebar-menu li {
-                margin-bottom: 0;
-                margin-right: 5px;
-            }
-           
-            .sidebar-menu a {
-                padding: 10px 15px;
+
+
+        .member-info p {
+            color: var(--orange);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .hero h1 {
+                font-size: 2.5rem;
             }
         }
-       
+
+
         @media (max-width: 768px) {
-            .header {
+            .hero h1 {
+                font-size: 2rem;
+            }
+           
+            .section, .section:nth-child(even) {
                 flex-direction: column;
-                text-align: center;
-                gap: 15px;
             }
            
-            .stats-cards {
-                grid-template-columns: 1fr;
+            .section-image {
+                width: 100%;
+                height: 300px;
             }
            
-            table {
-                display: block;
-                overflow-x: auto;
+            .section-content {
+                padding: 2rem;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+           
+            .hero p {
+                font-size: 1rem;
+            }
+           
+            .section h2 {
+                font-size: 1.8rem;
+            }
+           
+            .values h2, .team h2 {
+                font-size: 2rem;
+            }
+           
+            .container {
+                padding: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="dashboard">
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <div class="brand">
-                <h2><i class="fas fa-spa"></i> Skin<span>Glow</span> Admin</h2>
+    <?php include '../includes/header.php'; ?>
+
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>About <span>Skin Glow</span></h1>
+            <p>Discover our journey to revolutionize skincare with natural ingredients and science-backed formulations that bring out your natural glow.</p>
+            <a href="#" class="btn">Explore Our Products</a>
+        </section>
+
+
+        <!-- Section 1: Our Story -->
+        <section class="section">
+            <div class="section-content">
+                <h2>Our <span>Story</span></h2>
+                <p>Founded in 2025, Skin Glow began as a small family-owned business with a passion for natural skincare. Our founder, Emily Roberts, started creating homemade creams and serums in her kitchen to address her own skin concerns.</p>
+                <p>Today, we've grown into a trusted brand with a full range of products that combine the best of nature and science. We're committed to creating effective, sustainable, and cruelty-free skincare solutions that deliver visible results.</p>
+                <a href="#" class="btn">Learn More</a>
             </div>
-            <ul class="sidebar-menu">
-                <li><a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
-                <li><a href="#"><i class="fas fa-users"></i> Users</a></li>
-                <li><a href="#"><i class="fas fa-shopping-bag"></i> Products</a></li>
-                <li><a href="#"><i class="fas fa-calendar-alt"></i> Appointments</a></li>
-                <li><a href="#"><i class="fas fa-chart-bar"></i> Reports</a></li>
-                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
-            </ul>
-        </div>
-       
-        <!-- Main Content -->
-        <div class="main-content">
-            <!-- Header -->
-            <div class="header">
-                <div class="welcome">
-                    <h1>Welcome, <?php echo $_SESSION['name']; ?></h1>
-                    <p>Here's what's happening with your website today.</p>
-                </div>
-                <div class="admin-info">
-                    <a href="../logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                </div>
+            <div class="section-image">
+                <i class="fas fa-seedling"></i>
             </div>
-           
-            <!-- Stats Cards -->
-            <div class="stats-cards">
-                <div class="card stat-card">
-                    <div class="stat-icon users">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="stat-info">
-                        <h3><?php echo $totalUsers; ?></h3>
-                        <p>Total Users</p>
-                    </div>
+        </section>
+
+
+        <!-- Section 2: Our Philosophy -->
+        <section class="section">
+            <div class="section-content">
+                <h2>Our <span>Philosophy</span></h2>
+                <p>We believe that healthy skin starts with respecting both your body and the planet. That's why we formulate our products with carefully selected natural ingredients that are ethically sourced and environmentally friendly.</p>
+                <p>Our approach is simple: fewer chemicals, more effectiveness. We avoid harsh additives and instead harness the power of botanicals, vitamins, and minerals to nurture your skin's natural balance and radiance.</p>
+                <a href="#" class="btn">Our Ingredients</a>
+            </div>
+            <div class="section-image">
+                <i class="fas fa-leaf"></i>
+            </div>
+        </section>
+
+
+        <!-- Values Section -->
+        <section class="values">
+            <h2>Our <span>Values</span></h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <i class="fas fa-recycle"></i>
+                    <h3>Sustainability</h3>
+                    <p>We're committed to eco-friendly practices, from sourcing to packaging, to minimize our environmental footprint.</p>
                 </div>
-               
-                <?php
-                $roleCountsAssoc = [];
-                foreach ($roleCounts as $roleCount) {
-                    $roleCountsAssoc[$roleCount['role']] = $roleCount['count'];
-                }
-                ?>
-               
-                <div class="card stat-card">
-                    <div class="stat-icon admin">
-                        <i class="fas fa-user-shield"></i>
-                    </div>
-                    <div class="stat-info">
-                        <h3><?php echo isset($roleCountsAssoc['admin']) ? $roleCountsAssoc['admin'] : 0; ?></h3>
-                        <p>Admin Users</p>
-                    </div>
+                <div class="value-item">
+                    <i class="fas fa-heart"></i>
+                    <h3>Natural Ingredients</h3>
+                    <p>We use only the purest natural ingredients, carefully selected for their effectiveness and safety.</p>
                 </div>
-               
-                <div class="card stat-card">
-                    <div class="stat-icon dermatologist">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    <div class="stat-info">
-                        <h3><?php echo isset($roleCountsAssoc['dermatologist']) ? $roleCountsAssoc['dermatologist'] : 0; ?></h3>
-                        <p>Dermatologists</p>
-                    </div>
-                </div>
-               
-                <div class="card stat-card">
-                    <div class="stat-icon client">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="stat-info">
-                        <h3><?php echo isset($roleCountsAssoc['client']) ? $roleCountsAssoc['client'] : 0; ?></h3>
-                        <p>Clients</p>
-                    </div>
+                <div class="value-item">
+                    <i class="fas fa-award"></i>
+                    <h3>Quality</h3>
+                    <p>Every product undergoes rigorous testing to ensure the highest standards of quality and effectiveness.</p>
                 </div>
             </div>
-           
-            <!-- Users Table -->
-            <div class="users-table">
-                <div class="table-header">
-                    <h2><i class="fas fa-users"></i> All Registered Users</h2>
-                    <div class="actions">
-                        <button class="action-btn view-btn"><i class="fas fa-download"></i> Export</button>
-                    </div>
-                </div>
-               
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Joined</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($users as $user): ?>
-                        <tr>
-                            <td><?php echo $user['id']; ?></td>
-                            <td><?php echo htmlspecialchars($user['name']); ?></td>
-                            <td><?php echo htmlspecialchars($user['email']); ?></td>
-                            <td>
-                                <span class="role-badge role-<?php echo $user['role']; ?>">
-                                    <?php echo ucfirst($user['role']); ?>
-                                </span>
-                            </td>
-                            <td><?php echo date('M j, Y', strtotime($user['created_at'])); ?></td>
-                            <td>
-                                <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
-                                <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
-                                <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        </section>
+
+
     </div>
+        <?php include '../includes/footer.php'; ?>
+
+
 
 
     <script>
-        // Simple JavaScript for interactivity
+        // Simple animation for elements when they come into view
         document.addEventListener('DOMContentLoaded', function() {
-            // Add active class to clicked menu items
-            const menuItems = document.querySelectorAll('.sidebar-menu a');
-            menuItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    menuItems.forEach(i => i.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
+            const sections = document.querySelectorAll('.section, .value-item, .team-member');
            
-            // Confirm before deleting
-            const deleteButtons = document.querySelectorAll('.delete-btn');
-            deleteButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    if (confirm('Are you sure you want to delete this user?')) {
-                        // Here you would typically make an AJAX request or form submission
-                        alert('User deletion functionality would be implemented here.');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
                     }
                 });
+            }, { threshold: 0.1 });
+           
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(section);
             });
         });
     </script>
 </body>
 </html>
-
-
-

@@ -277,19 +277,19 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         <a href="../index.php" class="nav-link <?php echo ($current_page == 'index.php') ? 'active' : ''; ?>">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="./pages/about.php" class="nav-link <?php echo ($current_page == 'about.php') ? 'active' : ''; ?>">About</a>
+                        <a href="../pages/about.php" class="nav-link <?php echo ($current_page == 'about.php') ? 'active' : ''; ?>">About</a>
                     </li>                    
                     <li class="nav-item">
-                        <a href="../pages/products.php" class="nav-link <?php echo ($current_page == 'products.php') ? 'active' : ''; ?>">Products</a>
+                        <a href="../pages/product.php" class="nav-link <?php echo ($current_page == 'products.php') ? 'active' : ''; ?>">Products</a>
                     </li>                    
                     <li class="nav-item">
-                        <a href="../pages/dematologist.php" class="nav-link <?php echo ($current_page == 'dermatologist.php') ? 'active' : ''; ?>">Dermatologists</a>
+                        <a href="../pages/dermatologist.php" class="nav-link <?php echo ($current_page == 'dermatologist.php') ? 'active' : ''; ?>">Dermatologists</a>
                     </li>                    
                     <li class="nav-item">
-                        <a href="../authentication/login.php" class="nav-link <?php echo ($current_page == 'login.php') ? 'active' : ''; ?>">Login</a>
+                        <a href="./aunthentication/login.php" class="nav-link <?php echo ($current_page == 'login.php') ? 'active' : ''; ?>">Login</a>
                     </li>  
                     <li class="nav-item">
-                        <a href="../authentication/register.php" class="nav-link register-btn <?php echo ($current_page == 'register.php') ? 'active' : ''; ?>">Register</a>
+                        <a href="./aunthentication/register.php" class="nav-link register-btn <?php echo ($current_page == 'register.php') ? 'active' : ''; ?>">Register</a>
                     </li>
                 </ul>
                

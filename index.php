@@ -627,6 +627,10 @@ session_start();
             <div class="hero-image">
                 <img src="https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Skincare Products">
             </div>
+            <a href="pages/dermatologist.php" class="btn btn-secondary">
+                        <i class="fas fa-calendar-alt"></i> Book Consultation
+                    </a>
+
         </div>
     </section>
 

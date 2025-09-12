@@ -420,15 +420,6 @@ function getImagePath($image_path) {
     <section class="about">
         <div class="container">
             <div class="about-content">
-                <div class="about-text">
-                    <h2 class="section-title">About Our Products</h2>
-                    <p>Our skincare line is the result of extensive research and development by dermatologists and skincare experts. We use only premium, ethically sourced ingredients that are free from harmful chemicals and toxins.</p>
-                    <p>All our products are cruelty-free and environmentally conscious. We're committed to sustainability throughout our production process, from sourcing to packaging.</p>
-                    <p>Whether you have dry, oily, combination, or sensitive skin, we have products specifically formulated to address your unique skincare needs and help you achieve a natural, healthy glow.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Skincare products">
-                </div>
             </div>
         </div>
     </section>

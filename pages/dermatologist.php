@@ -429,7 +429,7 @@ if ($conn->connect_error) {
         // Function to fetch dermatologists from the server
         async function fetchDermatologists() {
             try {
-                const response = await fetch('../authentication/dashboards/get_dermatologists.php');
+                const response = await fetch('../aunthentication/dashboards/get_dermatologists.php');
                
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -535,7 +535,7 @@ if ($conn->connect_error) {
             };
            
             try {
-                const response = await fetch('../authentication/dashboards/book_appointment.php', {
+                const response = await fetch('../Aunthentication/dashboards/book_appointment.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

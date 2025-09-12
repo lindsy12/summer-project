@@ -622,7 +622,7 @@ session_start();
         <div class="container hero-content">
             <div class="hero-text">
                 <h1>Discover Your Perfect Skincare Routine</h1>
-                <p>GlowSkin offers premium skincare products and expert advice to help you achieve healthy, radiant skin. Our dermatologist-approved formulas are designed for all skin types.</p>
+                <p>LinkedSkin offers premium skincare products and expert advice to help you achieve healthy, radiant skin. Our dermatologist-approved formulas are designed for all skin types.</p>
                 <div class="hero-buttons">
                     <a href="#" class="btn btn-primary">
                         <i class="fas fa-shopping-bag"></i> Shop Now

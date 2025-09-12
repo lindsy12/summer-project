@@ -360,7 +360,6 @@
         <section class="hero">
             <h1>About <span>LinkedSkin</span></h1>
             <p>Welcome to LinkedSkin! A community where everyone cares.</p>
-            <a href="#" class="btn">Explore Our Products</a>
         </section>
 
 
@@ -369,7 +368,6 @@
             <div class="section-content">
                 <h2>Our <span>Story</span></h2>
                 <p>Founded in 2025, LinkedSkin is inspired by a group of girls who are skincare enthusiasts, always searching for solutions to their skin problems. </p>
-                <a href="#" class="btn">Learn More</a>
             </div>
             <div class="section-image">
                 <i class="fas fa-seedling"></i>
@@ -382,7 +380,6 @@
             <div class="section-content">
                 <h2>Our <span>Philosophy</span></h2>
                 <p>We believe that many people suffer skincare problems because they rarely get the right advices that they need .</p>
-                <a href="#" class="btn">Our Ingredients</a>
             </div>
             <div class="section-image">
                 <i class="fas fa-leaf"></i>
@@ -396,18 +393,19 @@
             <div class="values-grid">
                 <div class="value-item">
                     <i class="fas fa-recycle"></i>
-                    <h3>Sustainability</h3>
-                    <p>We're committed to eco-friendly practices, from sourcing to packaging, to minimize our environmental footprint.</p>
+                    <h3>Trustworthy Guidance</h3>
+                    <p>We're committed to providing reliable information and support to help you make informed decisions about your skincare.</p>
                 </div>
                 <div class="value-item">
                     <i class="fas fa-heart"></i>
-                    <h3>Natural Ingredients</h3>
-                    <p>We use only the purest natural ingredients, carefully selected for their effectiveness and safety.</p>
+                    <h3>Transparency and Engagement
+                    </h3>
+        <p>We promote openness between users and brands, encouraging authentic interactions rather than one-way marketing.</p>
                 </div>
                 <div class="value-item">
                     <i class="fas fa-award"></i>
-                    <h3>Quality</h3>
-                    <p>Every product undergoes rigorous testing to ensure the highest standards of quality and effectiveness.</p>
+                    <h3>Holistic Ecosystem</h3>
+                    <p>This is a community where everyone cares about skincare and supports each other in their journeys.</p>
                 </div>
             </div>
         </section>

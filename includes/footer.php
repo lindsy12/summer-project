@@ -620,7 +620,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>LinkedSkin</h3>
-                    <p>Premium skincare products developed with dermatologists to help you achieve healthy, radiant skin.</p>
+                    <p>Premium skincare products developed adviced by dermatologists to help you achieve healthy, radiant skin.</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -643,19 +643,18 @@
                 <div class="footer-column">
                     <h3>Customer Service</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Shipping & Returns</a></li>
                         <li><a href="#">FAQ</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Track Order</a></li>
                     </ul>
                 </div>
                
                 <div class="footer-column">
                     <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> jonasi-messasi Yaounde</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Ndjounasi-messasi Yaounde</p>
                     <p><i class="fas fa-phone"></i> +237 680065719</p>
-                    <p><i class="fas fa-envelope"></i> info@glowskin.com</p>
+                    <p><i class="fas fa-phone"></i> +237 670077488</p>
+                    <p><i class="fas fa-envelope"></i> kwakearabella@gmail.com</p>
                 </div>
             </div>
            

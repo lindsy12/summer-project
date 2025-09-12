@@ -623,14 +623,6 @@ session_start();
             <div class="hero-text">
                 <h1>Discover Your Perfect Skincare Routine</h1>
                 <p>LinkedSkin offers premium skincare products and expert advice to help you achieve healthy, radiant skin. Our dermatologist-approved formulas are designed for all skin types.</p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary">
-                        <i class="fas fa-shopping-bag"></i> Shop Now
-                    </a>
-                    <a href="#" class="btn btn-secondary">
-                        <i class="fas fa-calendar-alt"></i> Book Consultation
-                    </a>
-                </div>
             </div>
             <div class="hero-image">
                 <img src="https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Skincare Products">
@@ -693,7 +685,6 @@ session_start();
                         <h3>Vitamin C Serum</h3>
                         <p>Brightening and anti-aging serum with antioxidant protection</p>
                         <div class="product-price">12,000FCFA</div>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
                     </div>
                 </div>
                
@@ -705,7 +696,6 @@ session_start();
                         <h3>Hydrating Moisturizer</h3>
                         <p>24-hour deep hydration formula for all skin types</p>
                         <div class="product-price">10,500FCFA</div>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
                     </div>
                 </div>
                
@@ -717,7 +707,6 @@ session_start();
                         <h3>SPF 50 Sunscreen</h3>
                         <p>Broad spectrum UV protection with lightweight feel</p>
                         <div class="product-price">6,500FCFA</div>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
                     </div>
                 </div>
             </div>
@@ -740,10 +729,9 @@ session_start();
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Sarah M.">
                         </div>
                         <div class="author-info">
-                            <h4>Sarah M.</h4>
+                            <h4>Kinyuy Lindsy</h4>
                             <p>Verified Customer</p>
                         </div>
                     </div>
@@ -751,14 +739,13 @@ session_start();
                
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        As someone with sensitive skin, I'm always cautious about new products. GlowSkin's moisturizer is the only one that doesn't irritate my skin while providing amazing hydration.
+                        As someone with sensitive skin, I'm always cautious about new products. LinkedSkin helped me find the cosmetic product of my dreams.The only one that doesn't irritate my skin while providing amazing hydration.
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="James K.">
                         </div>
                         <div class="author-info">
-                            <h4>James K.</h4>
+                            <h4>Kwake Arabella</h4>
                             <p>Verified Customer</p>
                         </div>
                     </div>
@@ -770,10 +757,9 @@ session_start();
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <img src="https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Lisa T.">
                         </div>
                         <div class="author-info">
-                            <h4>Lisa T.</h4>
+                            <h4>Keziah Ngwi.</h4>
                             <p>Verified Customer</p>
                         </div>
                     </div>
@@ -787,15 +773,7 @@ session_start();
     <section class="cta">
         <div class="container">
             <h2>Ready to Transform Your Skin?</h2>
-            <p>Join thousands of satisfied customers who have discovered the GlowSkin difference</p>
-            <div class="cta-buttons">
-                <a href="authentication/register.php" class="btn btn-light">
-                    <i class="fas fa-user-plus"></i> Create Account
-                </a>
-                <a href="#" class="btn btn-secondary">
-                    <i class="fas fa-shopping-bag"></i> Shop Products
-                </a>
-            </div>
+            <p>Join thousands of satisfied customers who have discovered the LinkedSkin difference</p>
         </div>
     </section>
 <?php include 'includes/footer.php'; ?>

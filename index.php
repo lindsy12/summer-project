@@ -644,7 +644,7 @@ session_start();
         <div class="container">
             <div class="section-title">
                 <h2>Why Choose LinkedSkin</h2>
-                <p>We provide exceptional skincare solutions backed by science and nature</p>
+                <p>We provide exceptional skincare solutions backed by medical theories and experiences</p>
             </div>
            
             <div class="features-grid">
@@ -652,24 +652,24 @@ session_start();
                     <div class="feature-icon">
                         <i class="fas fa-leaf"></i>
                     </div>
-                    <h3>Natural Ingredients</h3>
-                    <p>Our products are formulated with natural, sustainably sourced ingredients that are gentle on your skin.</p>
+                    <h3>Transparency Between Brands And Users</h3>
+                    <p>Cosmetic companies can respond to feedback directly, giving you and open and honest interaction.</p>
                 </div>
                
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-flask"></i>
                     </div>
-                    <h3>Science-Backed Formulas</h3>
-                    <p>Each product is developed with dermatologists and clinically tested for effectiveness and safety.</p>
+                    <h3>Trusted Expert Involvement</h3>
+                    <p>Access to dermatologists ensuring advice is credible and and not just peer to peer guesswork.</p>
                 </div>
                
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-heart"></i>
                     </div>
-                    <h3>Cruelty-Free</h3>
-                    <p>We never test on animals and are committed to ethical, cruelty-free beauty practices.</p>
+                    <h3>Community Support And Social Interaction</h3>
+                    <p>can onnect with others facing similar skin challenges, exchange tips and get emotional support.</p>
                 </div>
             </div>
         </div>

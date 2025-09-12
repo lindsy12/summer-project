@@ -619,7 +619,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>GlowSkin</h3>
+                    <h3>LinkedSkin</h3>
                     <p>Premium skincare products developed with dermatologists to help you achieve healthy, radiant skin.</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>

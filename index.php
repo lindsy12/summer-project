@@ -692,7 +692,7 @@ session_start();
                     <div class="product-info">
                         <h3>Vitamin C Serum</h3>
                         <p>Brightening and anti-aging serum with antioxidant protection</p>
-                        <div class="product-price">$29.99</div>
+                        <div class="product-price">$12,000FCFA</div>
                         <a href="#" class="btn btn-primary">Add to Cart</a>
                     </div>
                 </div>
@@ -704,7 +704,7 @@ session_start();
                     <div class="product-info">
                         <h3>Hydrating Moisturizer</h3>
                         <p>24-hour deep hydration formula for all skin types</p>
-                        <div class="product-price">$24.99</div>
+                        <div class="product-price">$10,500FCFA</div>
                         <a href="#" class="btn btn-primary">Add to Cart</a>
                     </div>
                 </div>
@@ -716,7 +716,7 @@ session_start();
                     <div class="product-info">
                         <h3>SPF 50 Sunscreen</h3>
                         <p>Broad spectrum UV protection with lightweight feel</p>
-                        <div class="product-price">$19.99</div>
+                        <div class="product-price">6,500FCFA</div>
                         <a href="#" class="btn btn-primary">Add to Cart</a>
                     </div>
                 </div>

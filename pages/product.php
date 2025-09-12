@@ -409,7 +409,7 @@ function getImagePath($image_path) {
         <div class="container">
             <h2 class="section-title">Our Products</h2>
             <div class="intro-content">
-                <p>At SkinGlow, we believe that everyone deserves to have healthy, radiant skin. Our carefully curated collection of skincare products is formulated with the finest natural ingredients, scientifically proven to nourish and rejuvenate your skin.</p>
+                <p>At LinkedSkin, we believe that everyone deserves to have healthy, radiant skin. Our carefully curated collection of skincare products is formulated with the finest natural ingredients, scientifically proven to nourish and rejuvenate your skin.</p>
                 <p>Each product is crafted with love and attention to detail, ensuring that you receive only the best for your skincare routine. Explore our collection below and find the perfect products for your skin type.</p>
             </div>
         </div>

@@ -493,15 +493,15 @@ function getImagePath($image_path) {
             <div class="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
-                    <span>+1 (555) 123-4567</span>
+                    <span>+237 670077488</span>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
-                    <span>info@skinglow.com</span>
+                    <span>kwakearabella@gmail.com</span>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span>123 Beauty Street, Cosmetic City</span>
+                    <span>Ndjounasi-messasi Yaounde</span>
                 </div>
             </div>
         </div>

@@ -643,7 +643,7 @@ session_start();
     <section class="features">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose GlowSkin</h2>
+                <h2>Why Choose LinkedSkin</h2>
                 <p>We provide exceptional skincare solutions backed by science and nature</p>
             </div>
            

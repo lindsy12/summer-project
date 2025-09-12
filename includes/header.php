@@ -267,7 +267,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <div class="nav-logo">
                     <a href="../index.php" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
                         <img src=""
-                             alt="SkinCare"
+                             alt="LINKEDSKIN"
                              style="height: 50px; margin-right: 10px;">
                     </a>
                 </div>

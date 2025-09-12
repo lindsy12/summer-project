@@ -358,8 +358,8 @@
     <div class="container">
         <!-- Hero Section -->
         <section class="hero">
-            <h1>About <span>Skin Glow</span></h1>
-            <p>Discover our journey to revolutionize skincare with natural ingredients and science-backed formulations that bring out your natural glow.</p>
+            <h1>About <span>LinkedSkin</span></h1>
+            <p>Welcome to LinkedSkin! A community where everyone cares.</p>
             <a href="#" class="btn">Explore Our Products</a>
         </section>
 
@@ -368,8 +368,7 @@
         <section class="section">
             <div class="section-content">
                 <h2>Our <span>Story</span></h2>
-                <p>Founded in 2025, Skin Glow began as a small family-owned business with a passion for natural skincare. Our founder, Emily Roberts, started creating homemade creams and serums in her kitchen to address her own skin concerns.</p>
-                <p>Today, we've grown into a trusted brand with a full range of products that combine the best of nature and science. We're committed to creating effective, sustainable, and cruelty-free skincare solutions that deliver visible results.</p>
+                <p>Founded in 2025, LinkedSkin is inspired by a group of girls who are skincare enthusiasts, always searching for solutions to their skin problems. </p>
                 <a href="#" class="btn">Learn More</a>
             </div>
             <div class="section-image">
@@ -382,8 +381,7 @@
         <section class="section">
             <div class="section-content">
                 <h2>Our <span>Philosophy</span></h2>
-                <p>We believe that healthy skin starts with respecting both your body and the planet. That's why we formulate our products with carefully selected natural ingredients that are ethically sourced and environmentally friendly.</p>
-                <p>Our approach is simple: fewer chemicals, more effectiveness. We avoid harsh additives and instead harness the power of botanicals, vitamins, and minerals to nurture your skin's natural balance and radiance.</p>
+                <p>We believe that many people suffer skincare problems because they rarely get the right advices that they need .</p>
                 <a href="#" class="btn">Our Ingredients</a>
             </div>
             <div class="section-image">

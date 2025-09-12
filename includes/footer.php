@@ -660,7 +660,7 @@
             </div>
            
             <div class="footer-bottom">
-                <p>&copy; 2025 GlowSkin. All rights reserved.</p>
+                <p>&copy; 2025 LinkedSkin. All rights reserved.</p>
             </div>
         </div>
     </footer>

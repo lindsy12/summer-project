@@ -348,7 +348,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                    
-                    <p>Join thousands of satisfied customers who trust GlowSkin for their skincare needs.</p>
+                    <p>Join thousands of satisfied customers who trust LinkedSkin for their skincare needs.</p>
                 </div>
                
                 <div class="login-right">
